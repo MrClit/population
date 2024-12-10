@@ -1,0 +1,13 @@
+<div class="sidebar">
+  <h3>Population Viewer</h3>
+  <ul>
+    <li (click)="selectOption('Global')" [class.active]="selectedOption === 'Global'">🌍 Global</li>
+    @for (continent of dataService.getContinents(); track continent) {
+      <li (click)="selectOption(continent)"
+          [class.active]="selectedOption === continent">
+        {{ continent }}
+      </li>
+    }
+  </ul>
+</div>
+

@@ -1,0 +1,18 @@
+<div class="table-container">
+  <table>
+    <thead>
+    <tr>
+      <th>Region</th>
+      <th>Population</th>
+    </tr>
+    </thead>
+    <tbody>
+      @for (item of data; track item) {
+        <tr>
+          <td>{{ item.name }}</td>
+          <td>{{ item.population | number }}</td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>
