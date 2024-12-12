@@ -1,3 +1,13 @@
+/*.filter-container {
+  margin-bottom: 1rem;
+}
+
+input[type='number'] {
+  padding: 0.5rem;
+  width: 200px;
+  margin-left: 0.5rem;
+}*/
+
 .table-container {
   max-width: 800px;
   margin: 20px auto;

@@ -1,6 +1,7 @@
 import {DestroyRef, inject, Injectable, signal} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {Population} from './data.model';
+import {DataTable, Population} from './data.model';
+import {Data} from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -11,8 +12,8 @@ export class DataService {
   private destroyRef = inject(DestroyRef);
 
   constructor(private http: HttpClient) {
+    // Data is refreshed once when the Service is constructed
     this.refreshData()
-
   }
 
   refreshData(): void {
@@ -24,8 +25,7 @@ export class DataService {
           population: country.population,
         }));
         this.populationData.set(extractedData);
-        console.log(extractedData);
-        this.getPopulationByContinent()
+        this.getPopulationByContinent(null)
       },
       error: err => {
         console.log('Error extracting data: ', err);
@@ -37,12 +37,12 @@ export class DataService {
     });
   }
 
-  // List of continents in the data
+  // List of continents in the data to show in the Menu
   getContinents() {
     return [...new Set(this.populationData().map(country => country.continent))]
   }
 
-  getPopulationByContinent() {
+  getPopulationByContinent(minPopulation: number | null) {
     const populationMap = new Map<string, number>();
 
     this.populationData().forEach(item => {
@@ -50,15 +50,32 @@ export class DataService {
       populationMap.set(item.continent, currentPopulation + item.population);
     });
 
-    return Array.from(populationMap, ([continent, totalPopulation]) => ({
-      continent,
-      totalPopulation
-    }));
+    const populationArray = Array.from(populationMap, ([continent, totalPopulation]) => ({
+      name: continent,
+      population: totalPopulation
+    }) as DataTable);
+
+    if (minPopulation) {
+      return populationArray.filter(item => {
+        return item.population >= minPopulation
+      })
+    } else {
+      return populationArray;
+    }
   }
 
-  getPopulationByCountry(continent: string) {
-
+  getPopulationByCountry(continent: string, minPopulation: number | null) {
+    const populationArray = this.populationData()
+      .filter(item => item.continent === continent)
+      .map((item) => {
+        return {name: item.country, population: item.population} as DataTable;
+      })
+    if (minPopulation) {
+      return populationArray.filter(item => {
+        return item.population >= minPopulation
+      })
+    } else {
+      return populationArray;
+    }
   }
-
-
 }

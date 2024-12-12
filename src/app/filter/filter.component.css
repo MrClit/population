@@ -1,0 +1,58 @@
+/* Contenedor principal */
+.filter-container {
+  margin-bottom: 1.5rem;
+}
+
+/* Estilo del formulario */
+.filter-form {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Etiqueta */
+.form-label {
+  font-weight: bold;
+  font-size: 1rem;
+  color: #333;
+  margin-right: 0.5rem;
+}
+
+/* Campo de entrada */
+.form-input {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 200px;
+  transition: border-color 0.3s;
+}
+
+.form-input:focus {
+  border-color: #1abc9c;
+  outline: none;
+}
+
+/* Botón */
+button.btn {
+  background-color: #1abc9c;
+  color: #fff;
+  padding: 10px 15px;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+button.btn:hover {
+  background-color: #0056b3;
+  transform: translateY(-1px);
+}
+
+button.btn:active {
+  background-color: #003d82;
+  transform: translateY(0);
+}
+

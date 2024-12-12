@@ -1,1 +1,6 @@
-<p>continent works!</p>
+<div class="global-container">
+  <h1>{{selectedContinent()}} Population by Country</h1>
+  <app-filter (minPopulation)="onMinPopulation($event)"/>
+  <app-tableview [data]="dataService.getPopulationByCountry(selectedContinent(), minPopulation)"/>
+</div>
+

@@ -1,14 +1,17 @@
 import { Component } from '@angular/core';
 import {DataService} from '../data/data.service';
+import {RouterLink, RouterLinkActive} from '@angular/router';
 
 @Component({
   selector: 'app-menu',
-  imports: [],
+  imports: [
+    RouterLink,
+    RouterLinkActive
+  ],
   templateUrl: './menu.component.html',
   styleUrl: './menu.component.css'
 })
 export class MenuComponent {
-  continents: string[] = ['Africa', 'Asia', 'Europe', 'North America', 'Oceania', 'South America'];
   selectedOption: string = 'Global';
 
   constructor(public dataService: DataService) {
@@ -16,6 +19,7 @@ export class MenuComponent {
 
   selectOption(option: string): void {
     this.selectedOption = option;
-    console.log(`Selected: ${option}`);
+    //console.log(`Selected: ${option}`);
   }
+
 }

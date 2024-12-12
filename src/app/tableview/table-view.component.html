@@ -1,3 +1,14 @@
+<!--<div class="filter-container">-->
+<!--  <label for="minPopulation">Población mínima:</label>-->
+<!--  <input-->
+<!--    id="minPopulation"-->
+<!--    type="number"-->
+<!--    [(ngModel)]="minPopulation"-->
+<!--    (input)="onMinPopulationChange()"-->
+<!--    placeholder="Introduce un valor"-->
+<!--  />-->
+<!--</div>-->
+
 <div class="table-container">
   <table>
     <thead>
@@ -7,7 +18,7 @@
     </tr>
     </thead>
     <tbody>
-      @for (item of data; track item) {
+      @for (item of data; track item.name) {
         <tr>
           <td>{{ item.name }}</td>
           <td>{{ item.population | number }}</td>

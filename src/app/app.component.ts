@@ -5,7 +5,7 @@ import {GlobalComponent} from './global/global.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, MenuComponent, GlobalComponent],
+  imports: [RouterOutlet, MenuComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

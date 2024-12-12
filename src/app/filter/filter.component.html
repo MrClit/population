@@ -1,0 +1,14 @@
+<div class="filter-container">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" class="filter-form">
+    <label for="minPopulation" class="form-label">Minimum population:</label>
+    <input
+      id="minPopulation"
+      type="number"
+      name="minPopulation"
+      formControlName="minPopulation"
+      class="form-input"
+      placeholder="Enter value"
+    />
+    <button type="submit" class="btn">Filter</button>
+  </form>
+</div>
