@@ -1,5 +1,7 @@
 <div class="global-container">
   <h1>Global Population by Continent</h1>
   <app-filter (minPopulation)="onMinPopulation($event)"/>
-  <app-tableview [data]="dataService.getPopulationByContinent(minPopulation)"/>
+<!--  <app-tableview [data]="dataService.getPopulationByContinent(minPopulation)"/>-->
+  <app-chartview [data]="dataService.getPopulationByContinent(minPopulation)" ></app-chartview>
 </div>
+

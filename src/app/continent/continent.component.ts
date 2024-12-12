@@ -1,15 +1,17 @@
-import {Component, DestroyRef, inject, input, Input, OnInit, signal} from '@angular/core';
+import {Component, DestroyRef, inject, OnInit, signal} from '@angular/core';
 import {TableViewComponent} from '../tableview/table-view.component';
 import {DataService} from '../data/data.service';
 import {ActivatedRoute} from '@angular/router';
 import {FilterComponent} from '../filter/filter.component';
+import {ChartviewComponent} from "../chartview/chartview.component";
 
 @Component({
   selector: 'app-continent',
-  imports: [
-    TableViewComponent,
-    FilterComponent
-  ],
+    imports: [
+        //TableViewComponent,
+        FilterComponent,
+        ChartviewComponent
+    ],
   templateUrl: './continent.component.html',
   styleUrl: './continent.component.css'
 })

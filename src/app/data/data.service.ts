@@ -1,7 +1,6 @@
 import {DestroyRef, inject, Injectable, signal} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {DataTable, Population} from './data.model';
-import {Data} from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
