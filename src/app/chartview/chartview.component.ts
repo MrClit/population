@@ -26,8 +26,8 @@ export class ChartviewComponent implements OnChanges {
       {
         label: 'Population',
         data: [], // Valores de población
-        backgroundColor: '#007bff',
-        borderColor: '#0056b3',
+        backgroundColor: '#1abc9c',
+        borderColor: '#1abc9c',
         borderWidth: 1
       }
     ]
@@ -53,8 +53,14 @@ export class ChartviewComponent implements OnChanges {
   };
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (changes['data'] && changes['data'].currentValue) {
-      this.updateChart();
+    if (changes['data']) {
+      const previousData = changes['data'].previousValue || [];
+      const currentData = changes['data'].currentValue || [];
+
+      // Comparamos que realmente data ha cambiado (aunque sea de orden)
+      if (JSON.stringify(previousData) !== JSON.stringify(currentData)) {
+        this.updateChart();
+      }
     }
   }
 

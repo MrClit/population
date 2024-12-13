@@ -49,18 +49,19 @@ export class DataService {
       populationMap.set(item.continent, currentPopulation + item.population);
     });
 
+    // Convertir el Map a un array de objetos tipo DataTable
     const populationArray = Array.from(populationMap, ([continent, totalPopulation]) => ({
       name: continent,
       population: totalPopulation
     }) as DataTable);
 
-    if (minPopulation) {
-      return populationArray.filter(item => {
-        return item.population >= minPopulation
-      })
-    } else {
-      return populationArray;
-    }
+    // Filtrar por población mínima si se especifica
+    const filteredArray = minPopulation
+      ? populationArray.filter(item => item.population >= minPopulation)
+      : populationArray;
+
+    // Ordenar por población en orden descendente
+    return filteredArray.sort((a, b) => b.population - a.population);
   }
 
   getPopulationByCountry(continent: string, minPopulation: number | null) {
@@ -69,12 +70,13 @@ export class DataService {
       .map((item) => {
         return {name: item.country, population: item.population} as DataTable;
       })
-    if (minPopulation) {
-      return populationArray.filter(item => {
-        return item.population >= minPopulation
-      })
-    } else {
-      return populationArray;
-    }
+
+    // Filtrar por población mínima si se especifica
+    const filteredArray = minPopulation
+      ? populationArray.filter(item => item.population >= minPopulation)
+      : populationArray;
+
+    // Ordenar por población en orden descendente
+    return filteredArray.sort((a, b) => b.population - a.population);
   }
 }
