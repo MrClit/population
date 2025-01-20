@@ -1,15 +1,15 @@
 .global-container {
-  padding: 20px;
+  padding: 2rem;
   background-color: #ffffff;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  margin: 20px auto;
-  max-width: 1000px; /* Limita el ancho máximo del contenedor */
+  margin: 2rem auto;
+  max-width: 100rem; /* Limita el ancho máximo del contenedor */
 }
 
 .global-container h1 {
-  font-size: 2rem;
+  font-size: 2.7rem;
   color: #2c3e50;
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 2rem;
 }

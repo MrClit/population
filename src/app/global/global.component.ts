@@ -7,7 +7,7 @@ import {ChartviewComponent} from '../chartview/chartview.component';
 @Component({
   selector: 'app-global',
   imports: [
-    //TableViewComponent,
+    // TableViewComponent,
     FilterComponent,
     ChartviewComponent
   ],

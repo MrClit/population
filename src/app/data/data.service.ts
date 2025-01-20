@@ -1,12 +1,13 @@
 import {DestroyRef, inject, Injectable, signal} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {DataTable, Population} from './data.model';
+import  {enviornment} from '../enviornment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
-  apiURL = "https://restcountries.com/v3.1/all?fields=name,continents,population";
+  apiURL = enviornment.baseUrl;
   populationData = signal<Population[]>([])
   private destroyRef = inject(DestroyRef);
 

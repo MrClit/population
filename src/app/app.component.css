@@ -10,12 +10,12 @@
 }
 
 app-menu {
-  flex: 0 0 250px; /* Fija el ancho de la barra lateral */
+  flex: 0 0 25rem; /* Fija el ancho de la barra lateral */
 }
 
 .content {
   flex: 1; /* Ocupa todo el espacio restante */
   overflow-y: auto; /* Habilita el scroll si el contenido es muy alto */
-  background-color: #f4f4f4; /* Color de fondo opcional para diferenciar */
-  padding: 20px; /* Espaciado interno opcional */
+  background-color: #f4f4f4; /* Color de fondo para diferenciar */
+  padding: 2rem; /* Espaciado interno */
 }
