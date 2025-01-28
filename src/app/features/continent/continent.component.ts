@@ -1,9 +1,9 @@
 import {Component, DestroyRef, inject, OnInit, signal} from '@angular/core';
-import {TableViewComponent} from '../tableview/table-view.component';
-import {DataService} from '../data/data.service';
+//import {TableViewComponent} from '../tableview/table-view.component';
+import {DataService} from '../../core/data.service';
 import {ActivatedRoute} from '@angular/router';
-import {FilterComponent} from '../filter/filter.component';
-import {ChartviewComponent} from "../chartview/chartview.component";
+import {FilterComponent} from '../../shared/filter/filter.component';
+import {ChartviewComponent} from "../../shared/chartview/chartview.component";
 
 @Component({
   selector: 'app-continent',

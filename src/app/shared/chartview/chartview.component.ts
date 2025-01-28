@@ -2,7 +2,7 @@ import {Component, Input, OnChanges, SimpleChanges} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {ChartConfiguration, Chart, registerables} from 'chart.js';
 import {BaseChartDirective} from 'ng2-charts';
-import {DataTable} from '../data/data.model';
+import {DataTable} from '../../core/data.model';
 
 // Registra los componentes necesarios de Chart.js
 Chart.register(...registerables);
@@ -19,7 +19,7 @@ export class ChartviewComponent implements OnChanges {
 
 
   // Configuración inicial del gráfico
-  public barChartType: 'bar' = 'bar'; // Tipo específico 'bar'
+  public barChartType = 'bar' as const; // Tipo específico 'bar'
   public barChartData: ChartConfiguration<'bar'>['data'] = {
     labels: [], // Categorías (nombres de países/regiones)
     datasets: [

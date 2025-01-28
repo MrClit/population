@@ -4,7 +4,7 @@
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   margin: 2rem auto;
-  max-width: 100rem; /* Limita el ancho máximo del contenedor */
+  max-width: 100%; /* Limita el ancho máximo del contenedor */
 }
 
 .global-container h1 {

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {DataService} from '../data/data.service';
+import {DataService} from '../../core/data.service';
 import {RouterLink, RouterLinkActive} from '@angular/router';
 
 @Component({
@@ -12,7 +12,7 @@ import {RouterLink, RouterLinkActive} from '@angular/router';
   styleUrl: './menu.component.css'
 })
 export class MenuComponent {
-  selectedOption: string = 'Global';
+  selectedOption = 'Global';
 
   constructor(public dataService: DataService) {
   }

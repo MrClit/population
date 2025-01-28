@@ -1,6 +1,6 @@
-import { Routes } from '@angular/router';
-import {GlobalComponent} from './global/global.component';
-import {ContinentComponent} from './continent/continent.component';
+import {Routes} from '@angular/router';
+import {GlobalComponent} from '../features/global/global.component';
+import {ContinentComponent} from '../features/continent/continent.component';
 
 export const routes: Routes = [
   {

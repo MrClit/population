@@ -1,6 +1,6 @@
 import {Component, Input} from '@angular/core';
 import {DecimalPipe} from '@angular/common';
-import {DataTable} from '../data/data.model';
+import {DataTable} from '../../core/data.model';
 
 @Component({
   selector: 'app-tableview',
