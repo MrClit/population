@@ -1,9 +1,9 @@
 import {Component, computed, OnInit, Signal, signal} from '@angular/core';
 // import {TableViewComponent} from '../tableview/table-view.component';
-import {DataService} from '../../core/data.service';
-import {FilterComponent} from '../../shared/filter/filter.component';
-import {ChartviewComponent} from '../../shared/chartview/chartview.component';
-import {DataTable} from '../../core/data.model';
+import {DataService} from '../../../core/data.service';
+import {FilterComponent} from '../../../shared/filter/filter.component';
+import {ChartviewComponent} from '../../../shared/chartview/chartview.component';
+import {DataTable} from '../../../core/data.model';
 
 @Component({
   selector: 'app-global',

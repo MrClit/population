@@ -1,24 +1,19 @@
 import {Routes} from '@angular/router';
-import {GlobalComponent} from '../features/global/global.component';
-import {ContinentComponent} from '../features/continent/continent.component';
+import {RegionComponent} from '../features/region/region.component';
 
 export const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'global'
+    redirectTo: 'region/global'
   },
   {
-    path: 'global',
-    component: GlobalComponent
-  },
-  {
-    path: 'continent/:continentId',
-    component: ContinentComponent
+    path: 'region/:continentId',
+    component: RegionComponent
   },
   {
     path: '**',
     pathMatch: 'full',
-    redirectTo: 'global'
+    redirectTo: 'region/global'
   }
 ];

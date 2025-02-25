@@ -3,14 +3,17 @@
   <ul>
     <li (click)="selectOption('Global')"
         [class.active]="selectedOption === 'Global'"
-        routerLink="/global"
-        routerLinkActive="active">🌍 Global
+        routerLink="/region/global"
+        routerLinkActive="active"
+    >
+      🌍 Global
     </li>
-    @for (continent of dataService.getContinents(); track continent) {
+    @for (continent of continents(); track continent) {
       <li (click)="selectOption(continent)"
           [class.active]="selectedOption === continent"
-          [routerLink]="['/continent',continent]"
-          routerLinkActive="active">
+          [routerLink]="['/region',continent]"
+          routerLinkActive="active"
+      >
         {{ continent }}
       </li>
     }
